@@ -1,0 +1,22 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: app
+  datasource:
+    url: jdbc:mysql://localhost:3306/job_management_system_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate # Can be 'create', 'update', or 'validate'
+      dialect: org.hibernate.dialect.MySQLDialect
+      format_sql: true
+    show-sql: true
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+app:
+  seeder:
+    enabled: false

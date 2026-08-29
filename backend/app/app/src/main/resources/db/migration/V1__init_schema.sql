@@ -1,0 +1,123 @@
+-- V1__init_schema.sql
+
+CREATE TABLE job_accounts (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE job_contracts (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE job_activities (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE job_contract_lines (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE job_case_type (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE job_mid_data (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    merchant_name VARCHAR(255) NOT NULL,
+    merchant_id INT NOT NULL,
+    address TEXT NOT NULL,
+    postal_code TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE job_tid_data (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    tid INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE job_csi_data (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    csi INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE job_sp_origin_data (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE job_sp_executor_data (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE job_kanwil_penerbit_data (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE job_kanwil_pelaksana_data (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE main_job_details (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    account_id BIGINT NOT NULL,
+    contract_id BIGINT NOT NULL,
+    work_activity_id BIGINT NOT NULL,
+    contract_line_id BIGINT NOT NULL,
+    job_number INT NOT NULL,
+    case_id VARCHAR(10) NOT NULL,
+    case_type BIGINT NOT NULL,
+    reference_number INT NOT NULL,
+    spk_reference INT NOT NULL,
+    job_description TEXT NOT NULL,
+    is_sla_priority TINYINT NOT NULL,
+    job_mid BIGINT NOT NULL,
+    job_tid BIGINT NOT NULL,
+    job_csi BIGINT NOT NULL,
+    job_merchant_name VARCHAR(100) NOT NULL,
+    job_address VARCHAR(100) NOT NULL,
+    job_city VARCHAR(100) NOT NULL,
+    job_postal_code VARCHAR(100) NOT NULL,
+    job_sp_origin BIGINT NOT NULL,
+    job_sp_executor BIGINT NOT NULL,
+    job_kanwil_penerbit BIGINT NOT NULL,
+    job_kanwil_pelaksana BIGINT NOT NULL,
+    job_registered_on TIMESTAMP NULL,
+    job_received_on TIMESTAMP NULL,
+    job_actual_target_date TIMESTAMP NULL,
+    job_update_to_customer_date TIMESTAMP NULL,
+    job_expected_response_date TIMESTAMP NULL,
+    job_expected_completion_date TIMESTAMP NULL,
+    job_status VARCHAR(255) DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,0 +1,53 @@
+/* ==========================================
+   VCare 2.0 Dashboard - Custom Styles & Colors
+   ========================================== */
+
+/* Custom Color Variables */
+:root {
+  --primary-blue: #0061F2;
+  --primary-blue-dark: #0042B0;
+  --bg-dashboard: #F4F7FE;
+  --text-main: #2B3674;
+  --text-muted: #A3AED0;
+}
+
+/* Base Body and Layout Adjustments */
+body {
+  background-color: var(--bg-dashboard);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar Gradient Theme */
+.sidebar-gradient {
+  background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Card Glow & Shadows */
+.dashboard-card {
+  background: #ffffff;
+  box-shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
+  border-radius: 20px;
+}
